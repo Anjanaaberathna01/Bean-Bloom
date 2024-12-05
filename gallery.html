@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BEAN & BOOLM</title>
+    <link rel="stylesheet" href="gallery.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+      integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="images/logo.png"
+            alt="Bean & Boolm"
+            width="150PX"
+            height="150PX"
+          />
+        </div>
+        <ul id="navMenu">
+          <i class="bx bx-x close" id="closeMenu"></i>
+          <li onclick="location.href='baen&boolm.html';">Home</li>
+          <li onclick="location.href='about us.html';">About us</li>
+          <li onclick="location.href='product.html';">Products</li>
+          <li onclick="location.href='gallery.html';">Gallery</li>
+          <li onclick="location.href='contact us.html';">Contact us</li>
+
+        </ul>
+        <div class="icons">
+          <i class="bx bx-cart"></i>
+          <i class="bx bx-search-alt-2"></i>
+          <i class="bx bx-menu menuIcon" id="openMenu"></i>
+        </div>
+      </nav>
+
+
+      <!--gallery-->
+
+      <div class="row">
+        <div class="column">
+          <img src="/images/gallery/1.jpg">
+          <img src="/images/gallery/2.jpg">
+          <img src="/images/gallery/3.jpg">
+          <img src="/images/gallery/4.jpg">
+          <img src="/images/gallery/5.jpg">
+          <img src="/images/gallery/6.jpg">
+          <img src="/images/gallery/7.jpg">
+        </div>
+        <div class="column">
+          <img src="/images/gallery/8.jpg">
+          <img src="/images/gallery/9.jpg">
+          <img src="/images/gallery/10.jpg">
+          <img src="/images/gallery/11.jpg">
+          <img src="/images/gallery/12.jpg">
+          <img src="/images/gallery/13.jpg">
+        </div>
+        <div class="column">
+            <img src="/images/gallery/14.jpg">
+            <img src="/images/gallery/15.jpg">
+            <img src="/images/gallery/16.jpg">
+            <img src="/images/gallery/17.jpg">
+            <img src="/images/gallery/18.jpg">
+            <img src="/images/gallery/19.jpg">
+            <img src="/images/gallery/20.jpg">
+        </div>
+        <div class="column">
+            <img src="/images/gallery/21.jpg">
+            <img src="/images/gallery/22.jpg">
+            <img src="/images/gallery/23.jpg">
+            <img src="/images/gallery/24.jpg">
+            <img src="/images/gallery/25.jpg">
+            <img src="/images/gallery/26.jpg">
+        </div>
+      </div>
+                <!--script for nav bar-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          let openMenu = document.getElementById("openMenu");
+          let closeMenu = document.getElementById("closeMenu");
+          let navMenu = document.getElementById("navMenu");
+  
+          openMenu.addEventListener("click", () => {
+            navMenu.style.right = "100px";
+          });
+  
+          closeMenu.addEventListener("click", () => {
+            navMenu.style.right = "-200px";
+          });
+        });
+      </script>
+    </header>
+      </body>
+    </head>
+</html>

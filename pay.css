@@ -1,0 +1,165 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  list-style: none;
+}
+header{
+  background: url(images/pay.jpg);
+  min-height: 100vh;
+  background-size: cover;
+  color: white;
+}
+
+nav{
+  padding: 20px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul{
+  display: flex;
+
+}
+
+nav ul li{
+  padding: 12px 24px;
+  font-weight: 520;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+nav ul li:hover{
+  background: #bc9667;
+}
+.icons{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icons i{
+  font-size: 24px;
+}
+.menu{
+  display: none !important;
+}
+.close{
+  display: none !important;
+}
+.A{
+
+  display: flex;
+  justify-content: center;
+}
+.checkout-container {
+    background: #fff;
+    padding: 10px 20px 10px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    opacity: 0.9;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 2px solid white;
+    cursor: pointer;
+  }
+  .reset{
+  background-color: #ff0000;
+ 
+}
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  .reset:hover{
+    background-color: #e21a1a;
+  }
+  
+  #message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  /* nav bar in side */
+
+  @media(max-width: 780px){
+    nav ul{
+        position: fixed;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #eddfce;
+        color: black;
+        padding: 20px;
+        width: 200px;
+        gap: 10px;
+        align-items: start;
+        padding-top: 60px;
+        transition: right 0.3s ease;
+    }
+    nav ul li{
+        display: block;
+        padding: 0;
+        padding-block: 5px;
+    }
+    nav ul li:hover{
+        background: transparent;
+        color: #e7be8c;
+    }
+    .menu{
+        display: block !important;
+    }
+    .close{
+        display: block !important;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    main{
+        flex-direction: column-reverse;
+    }
+}
+  

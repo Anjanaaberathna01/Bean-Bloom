@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Form</title>
+  <link rel="stylesheet" href="pay.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+  integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+</head>
+<body>
+  <!--nav bar-->
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="images/logo.png"
+            alt="Bean & Boolm"
+            width="150PX"
+            height="150PX"
+          />
+        </div>
+        <ul id="navMenu">
+          <i class="bx bx-x close" id="closeMenu"></i>
+          <li onclick="location.href='baen&boolm.html';">Home</li>
+          <li onclick="location.href='about us.html';">About us</li>
+          <li ondblclick="location.href='product.html';">Products</li>
+          <li onclick="location.href='gallery.html';">Gallery</li>
+          <li onclick="location.href='contact us.html';">Contact us</li>
+
+        </ul>
+        <div class="icons">
+          <i class="bx bx-cart"></i>
+          <i class="bx bx-search-alt-2"></i>
+          <i class="bx bx-menu menuIcon" id="openMenu"></i>
+        </div>
+      </nav>
+<div  class="A">
+  <div class="checkout-container">
+    <h1>Checkout</h1>
+    <form id="checkout-form">
+      <div class="form-group">
+        <label for="cardholder-name">Cardholder Name</label>
+        <input type="text" id="cardholder-name" name="cardholder-name" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+      </div>
+      <div class="form-group">
+        <label for="expiry-date">Expiry Date</label>
+        <input type="month" id="expiry-date" name="expiry-date" required>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+      </div>
+      <button type="submit" class="btn">Pay Now</button>
+      <button type="reset" class="reset" onclick="location.href='product.html';">Back</button>
+    </form>
+    <div id="message"></div>
+  </div>
+</div>
+
+  <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          let openMenu = document.getElementById("openMenu");
+          let closeMenu = document.getElementById("closeMenu");
+          let navMenu = document.getElementById("navMenu");
+  
+          openMenu.addEventListener("click", () => {
+            navMenu.style.right = "100px";
+          });
+  
+          closeMenu.addEventListener("click", () => {
+            navMenu.style.right = "-200px";
+          });
+        });
+
+    document.getElementById("checkout-form").addEventListener("submit", function(event) 
+    {
+  event.preventDefault();
+
+  const name = document.getElementById("cardholder-name").value;
+  const cardNumber = document.getElementById("card-number").value;
+  const expiryDate = document.getElementById("expiry-date").value;
+  const cvv = document.getElementById("cvv").value;
+
+  if (!name || !cardNumber || !expiryDate || !cvv) {
+    displayMessage("Please fill out all fields.", "error");
+    return;
+  }
+
+  if (!validateCardNumber(cardNumber)) {
+    displayMessage("Invalid card number.", "error");
+    return;
+  }
+
+  displayMessage("Payment successful!", "success");
+});
+
+function validateCardNumber(cardNumber) {
+  // Simple Luhn algorithm check
+  const digits = cardNumber.replace(/\D/g, "");
+  let sum = 0;
+  let shouldDouble = false;
+
+  for (let i = digits.length - 1; i >= 0; i--) {
+    let digit = parseInt(digits.charAt(i), 10);
+
+    if (shouldDouble) {
+      digit *= 2;
+      if (digit > 9) digit -= 9;
+    }
+
+    sum += digit;
+    shouldDouble = !shouldDouble;
+  }
+
+  return sum % 10 === 0;
+}
+
+function displayMessage(message, type) {
+  const messageDiv = document.getElementById("message");
+  messageDiv.textContent = message;
+  messageDiv.style.color = type === "success" ? "green" : "red";
+}
+
+  </script>
+  </header>
+</body>
+</html>
